@@ -164,3 +164,29 @@ function App() {
 export default App;
 
 Checkout branch multiple-components to see it in action.
+
+
+!!!!! Adding Styles !!!!! (adding-styles branch)
+
+App.css will be applied to everything essntially, because it adds to styles to
+the top of the document, rather than restricting it to that component. Separate
+css files in react is for the most part just for organization, although it IS
+possible to have it displayed only for certain components.
+
+For this lesson, we're going to start be deleting App.css as well as the import
+line at the top of App.js.
+
+Take note of the import line in index.js:
+import './index.css';
+
+This acts as a global stylesheet, go ahead and add whatever styles you need
+for index.css.
+
+Now, if we want to do inline styles within our JSX, this is an example from
+Navbar.js:
+
+<a href="/create" style={{
+  color: "white",
+  backgroundColor: '#f1356d',
+  borderRadius: '8px'
+}}>New Blog</a>
