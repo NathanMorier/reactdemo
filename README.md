@@ -102,3 +102,65 @@ export default App;
 
 
 To see a live example, checkout the dynamic-values-in-templates branch.
+
+
+!!!!! Multiple Components !!!!! (branch multiple-components)
+
+App.js is the root component, and all others will be nested inside,
+similar to Angular 2.
+
+Start by making src/Navbar.js, and structure it like this, similarly to Angular.
+
+//Navbar.js
+const Navbar = () => { // thick arrows are acceptable, or you can do it like App.js
+  return (
+    <nav className="navbar">
+      <h1>The Dojo Blog</h1>
+      <div className="links">
+        <a href="/">Home</a>
+        <a href="/create">New Blog</a>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
+
+
+Then make Home.js
+
+//Home.js
+const Home = () => { // thick arrows are acceptable, or you can do it like App.js
+  return (
+    <div className="home">
+      <h2>Homepage</h2>
+    </div>
+  );
+}
+
+export default Home;
+
+
+Now all you have to do is go to App.js, import the other two scripts, and then
+place tags for where you want them to appear.
+
+//App.js
+//import logo from './logo.svg';
+import './App.css';
+import Navbar from './Navbar'; // Add new import from Navbar.js
+import Home from './Home'; // Add new import from Home.js
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar /> { /*add self closing tag*/ }
+      <div className="content">
+        <Home /> { /*add self closing tag*/ }
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+Checkout branch multiple-components to see it in action.
