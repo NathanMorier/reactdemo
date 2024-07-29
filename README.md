@@ -64,6 +64,8 @@ root.render(
 The <App /> is what we use to actually display the JSX template.
 
 
+!!!!! Dynamic Values in Templates !!!!!
+
 Now, going back to App.js, take a look at the added const values, and the
 contents of the content div, what's taking place should be fairly obvious,
 //App.js
@@ -99,4 +101,4 @@ export default App;
 
 
 
-!!!!! Dynamic Values in Templates !!!!!
+To see a live example, checkout the dynamic-values-in-templates branch.
