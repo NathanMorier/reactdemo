@@ -244,3 +244,37 @@ const Home = () => { // thick arrows are acceptable, or you can do it like App.j
 }
 
 export default Home;
+
+
+!!!!! Using State (useState hook) !!!!! (using-state-usestate-hook branch)
+
+So the idea with the useState hook is for something on the page that might
+change after an interaction, like updated text. This will all be done within
+the Home.js file:
+
+//Home.js
+import { useState } from 'react'; // add import
+
+const Home = () => {
+  const [name, setName] = useState('mario'); // setName is a name we set, "name" grabs the useState value.
+  const [age, setAge] = useState(25); // same like above
+
+  const handleClick = () => {
+    setName('luigi'); // change value of setName after click
+    setAge('30'); // same as above
+  }
+
+  return (
+    <div className="home">
+      <h2>Homepage</h2>
+      <p>{ name } is { age } years old</p>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+
+export default Home;
+
+
+Comments should make it self explanatory, checkout the using-state-usestate-hook
+branch for a live demo.
