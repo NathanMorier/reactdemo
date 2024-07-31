@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Homepage</h2>
+      {/* Note that you're calling "name" and "age", NOT setName/setAge */}
       <p>{ name } is { age } years old</p>
       <button onClick={handleClick}>Click me</button>
     </div>
