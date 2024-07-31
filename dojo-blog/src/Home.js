@@ -7,7 +7,7 @@ const Home = () => {
 
   const handleClick = () => {
     setName('luigi'); // change value of setName after click
-    setAge('30'); // same as above
+    setAge(30); // same as above
   }
 
   return (

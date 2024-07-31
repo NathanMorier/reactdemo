@@ -261,7 +261,7 @@ const Home = () => {
 
   const handleClick = () => {
     setName('luigi'); // change value of setName after click
-    setAge('30'); // same as above
+    setAge(30); // same as above
   }
 
   return (
@@ -278,3 +278,8 @@ export default Home;
 
 Comments should make it self explanatory, checkout the using-state-usestate-hook
 branch for a live demo.
+
+!!!!! Intro To React Dev Tools !!!!! (intro-to-react-dev-tools branch)
+
+React Dev Tools is a browser extension, it adds a couple of more options in
+the "inspection" dev tools. It's useful, get it!
