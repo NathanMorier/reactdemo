@@ -1,21 +1,24 @@
 //Home.js
-import { useState } from 'react'; // add import
+import { useState } from 'react';
 
 const Home = () => {
-  const [name, setName] = useState('mario'); // setName is a name we set, "name" grabs the useState value.
-  const [age, setAge] = useState(25); // same like above
-
-  const handleClick = () => {
-    setName('luigi'); // change value of setName after click
-    setAge(30); // same as above
-  }
+  const [blogs, /*setBlogs*/] = useState([ // 'blogs' is essentially the name of the array
+    // Notice that 'setBlogs' is commented out, that's because we don't actually need it unless
+    // there's an update taking place like in the useState hook lesson.
+    { title: 'Its a-meee!', body: 'lorem ipsum...', author: 'mario', id: 1}, // id's MUST be unique
+    { title: 'Yahoooo!', body: 'lorem ipsum...', author: 'yoshi', id: 2},
+    { title: 'Yehee, go green!', body: 'lorem ipsum...', author: 'luigi', id: 3}
+  ]);
 
   return (
     <div className="home">
-      <h2>Homepage</h2>
-      {/* Note that you're calling "name" and "age", NOT setName/setAge */}
-      <p>{ name } is { age } years old</p>
-      <button onClick={handleClick}>Click me</button>
+      {blogs.map((blog) => ( // this is essentially a foreach loop, note the names
+        // the rest should be self explanatory
+        <div className="blog-preview" key={blog.id}>
+          <h2>{ blog.title }</h2>
+          <p>Written by { blog.author }</p>
+        </div>
+      ))}
     </div>
   );
 }

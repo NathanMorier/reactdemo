@@ -283,3 +283,35 @@ branch for a live demo.
 
 React Dev Tools is a browser extension, it adds a couple of more options in
 the "inspection" dev tools. It's useful, get it!
+
+
+!!!!! Outputting Lists !!!!! (outputting-lists branch)
+
+Checkout the branch for a live demo, it's essentially a demo for a foreach loop!
+
+//Home.js
+import { useState } from 'react';
+
+const Home = () => {
+  const [blogs, /*setBlogs*/] = useState([ // 'blogs' is essentially the name of the array
+    // Notice that 'setBlogs' is commented out, that's because we don't actually need it unless
+    // there's an update taking place like in the useState hook lesson.
+    { title: 'Its a-meee!', body: 'lorem ipsum...', author: 'mario', id: 1}, // id's MUST be unique
+    { title: 'Yahoooo!', body: 'lorem ipsum...', author: 'yoshi', id: 2},
+    { title: 'Yehee, go green!', body: 'lorem ipsum...', author: 'luigi', id: 3}
+  ]);
+
+  return (
+    <div className="home">
+      {blogs.map((blog) => ( // this is essentially a foreach loop, note the names
+        // the rest should be self explanatory
+        <div className="blog-preview" key={blog.id}>
+          <h2>{ blog.title }</h2>
+          <p>Written by { blog.author }</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Home;
