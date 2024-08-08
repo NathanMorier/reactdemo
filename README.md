@@ -447,3 +447,19 @@ const Home = () => {
 }
 
 export default Home;
+
+
+!!!!! useEffect Hook [The Basics] !!!!! (useeffect-hook-the-basics branch)
+
+This is a bit of a shorter lesson:
+
+//Home.js
+...
+...
+useEffect(() => {
+  console.log('use effect ran');
+  console.log(blogs);
+});
+...
+
+There'll be more in the next lesson.
