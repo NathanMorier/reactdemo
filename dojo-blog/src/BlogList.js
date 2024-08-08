@@ -5,7 +5,7 @@
   const blogs = props.blogs; // grabs everything from 'blogs' attribute (prop) on Home.js
   const title = props.title; // this will grab the title attribute from your BlogList on Home.js
 */
-  const BlogList = ({blogs, title, handleDelete}) => { // Add new handleDelete prop
+  const BlogList = ({blogs, title}) => {
 
   return (
     <div className="blog-list">
@@ -15,11 +15,6 @@
         <div className="blog-preview" key={blog.id}>
           <h2>{ blog.title }</h2>
           <p>Written by { blog.author }</p>
-          {/*
-            Since the data is stored in Home.js, it's NOT a good idea to store
-            the handleDelete function here, but rather where it is stored.
-          */}
-          <button onClick={() => handleDelete(blog.id)}>delete blog</button>
         </div>
       ))}
     </div>
