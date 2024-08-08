@@ -315,3 +315,63 @@ const Home = () => {
 }
 
 export default Home;
+
+
+!!!!! Props !!!!!
+
+This will be the start of outputting data for a blog, this will require editing
+of Home.js, and creating a new file called BlogList.js, the comments should make
+things self explanatory.
+
+//Home.js
+import { useState } from 'react';
+import BlogList from './BlogList';
+
+const Home = () => {
+  const [blogs, /*setBlogs*/] = useState([ // 'blogs' is essentially the name of the array
+    // Notice that 'setBlogs' is commented out, that's because we don't actually need it unless
+    // there's an update taking place like in the useState hook lesson.
+    { title: 'Its a-meee!', body: 'lorem ipsum...', author: 'mario', id: 1}, // id's MUST be unique
+    { title: 'Yahoooo!', body: 'lorem ipsum...', author: 'yoshi', id: 2},
+    { title: 'Yehee, go green!', body: 'lorem ipsum...', author: 'luigi', id: 3}
+  ]);
+
+  return (
+    <div className="home">
+      <BlogList blogs={blogs} title="All Blogs!" />
+    </div>
+  );
+}
+
+export default Home;
+
+
+
+//Bloglist.js
+
+// this here is one way to grab the values from blogs, but there's an even easier way after the comment.
+/*const BlogList = (props) => {
+  const blogs = props.blogs; // grabs everything from 'blogs' attribute (prop) on Home.js
+  const title = props.title; // this will grab the title attribute from your BlogList on Home.js
+*/
+  const BlogList = ({blogs, title}) => { // grabs from both blogs and title attributes (or props) on BlogList on Home.js
+
+  return (
+    <div className="blog-list">
+      <h2>{ title }</h2>
+      {blogs.map((blog) => ( // this is essentially a foreach loop, note the names
+        // the rest should be self explanatory
+        <div className="blog-preview" key={blog.id}>
+          <h2>{ blog.title }</h2>
+          <p>Written by { blog.author }</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default BlogList;
+
+Now, the reason WHY it is actually better to not have the array included in BlogList.js
+even though you very well could, is because you may need a DIFFERENT blog array
+for Home.js, compared to a different page with more filtered results.
