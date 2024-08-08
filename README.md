@@ -383,3 +383,67 @@ So all we've done in this one is make the blog with a filter, which can be
 done on Home.js, no explanation required:
 
 <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs" />
+
+
+!!!!! Functions as Props !!!!! (functions-as-props branch)
+
+This will allow the user to delete blog entries by using a function through
+a prop, see below:
+
+//Bloglist.js
+
+// this here is one way to grab the values from blogs, but there's an even easier way after the comment.
+/*const BlogList = (props) => {
+  const blogs = props.blogs; // grabs everything from 'blogs' attribute (prop) on Home.js
+  const title = props.title; // this will grab the title attribute from your BlogList on Home.js
+*/
+  const BlogList = ({blogs, title, handleDelete}) => { // Add new handleDelete prop
+
+  return (
+    <div className="blog-list">
+      <h2>{ title }</h2>
+      {blogs.map((blog) => ( // this is essentially a foreach loop, note the names
+        // the rest should be self explanatory
+        <div className="blog-preview" key={blog.id}>
+          <h2>{ blog.title }</h2>
+          <p>Written by { blog.author }</p>
+          {/*
+            Since the data is stored in Home.js, it's NOT a good idea to store
+            the handleDelete function here, but rather where it is stored.
+          */}
+          <button onClick={() => handleDelete(blog.id)}>delete blog</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default BlogList;
+
+//Home.js
+import { useState } from 'react';
+import BlogList from './BlogList';
+
+const Home = () => {
+  const [blogs, setBlogs] = useState([ // 'blogs' is essentially the name of the array
+    // Notice that 'setBlogs' is NO LONGER commented out, that's because it's
+    // actually being used.
+    { title: 'Its a-meee!', body: 'lorem ipsum...', author: 'mario', id: 1}, // id's MUST be unique
+    { title: 'Yahoooo!', body: 'lorem ipsum...', author: 'yoshi', id: 2},
+    { title: 'Yehee, go green!', body: 'lorem ipsum...', author: 'luigi', id: 3}
+  ]);
+
+  // New function to handleDelete
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter(blog => blog.id !== id);
+    setBlogs(newBlogs);
+  }
+
+  return (
+    <div className="home">
+      <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} /> {/*new handleDelete prop*/}
+    </div>
+  );
+}
+
+export default Home;
