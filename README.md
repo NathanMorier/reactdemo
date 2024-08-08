@@ -375,3 +375,11 @@ export default BlogList;
 Now, the reason WHY it is actually better to not have the array included in BlogList.js
 even though you very well could, is because you may need a DIFFERENT blog array
 for Home.js, compared to a different page with more filtered results.
+
+
+!!!!! Reusing Components !!!!! (reusing-components branch)
+
+So all we've done in this one is make the blog with a filter, which can be
+done on Home.js, no explanation required:
+
+<BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs" />
