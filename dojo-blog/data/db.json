@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "It's a-meee!!",
+      "body": "lorem ipsum...",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "Yahoooo!",
+      "body": "lorem ipsum...",
+      "author": "yoshi",
+      "id": 2
+    },
+    {
+      "title": "Yehee, go green!",
+      "body": "lorem ipsum...",
+      "author": "luigi",
+      "id": 3
+    }
+  ]
+}

@@ -509,3 +509,42 @@ const Home = () => {
 }
 
 export default Home;
+
+
+!!!!! Using JSON Server !!!!! (using-json-server branch)
+
+Note, you can go here for making a JSON Server: https://www.youtube.com/watch?v=mAqYJF-yxO8&list=PL4cUxeGkcC9i2v2ZqJgydXIcRq_ZizIdD&index=2
+
+Create a data/db.json file, notice the 'blogs' name assigned to it:
+{
+  "blogs": [
+    {
+      ...items
+    },
+    {
+      ...items
+    },
+    {
+      ...items
+    }
+  ]
+}
+
+After that, you'll run the following command:
+npx json-server --watch data/db.json --port 8000
+
+Should be pretty self explanatory with 1 necessary mention; putting the server
+on port 8000 is a conscious choice because it's NOT 3000, which is what our
+react site is working on.
+
+You'll notice that it gives you this address:
+http://localhost:8000/blogs
+
+We have some strategic "end points" we can use, which includes the following:
+
+/blogs --------- GET ---- Fetch all Blogs
+/blogs/{id} ---- GET ---- Fetch a single blog
+/blogs --------- POST --- Add a new blog
+/blogs/{id} ---- DELETE - Delete a blog
+
+But we'll find out more, in the next lesson.
