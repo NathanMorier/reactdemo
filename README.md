@@ -871,3 +871,57 @@ export default App;
 Note that the new import, and the return has to be wrapped in the 'Router' tag, and the 'Routes' tag
 is where all of the routes will be loaded. Note the 'Route' tag specifies both the URL path
 as well as the tag for the Home component.
+
+
+!!!!! Exact Match Routes !!!!! (exact-match-routes branch)
+
+Make src/Create.js
+
+// Create.js
+const Create = () => {
+  return (
+    <div className="create">
+      <h2>Add a New Blog</h2>
+    </div>
+  );
+}
+
+export default Create;
+
+
+Then make a few changes on App.js:
+//App.js
+//import logo from './logo.svg';
+import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Create from './Create';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<Create />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+So... what's different than what we'd expect? Why a different lesson? Well, in
+previous versions, you use to have to do this:
+
+<Route exact path="/" element={<Home />} />
+
+Because otherwise, when you'd try to go to /create, it would just pick up on the "/"
+and then go to that instead, just like a page called "/c" would get loaded instead
+of "/create" if it existed. The newer versions have corrected this issue, so
+instead we'll now go on to setting up router links!
