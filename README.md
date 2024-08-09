@@ -835,3 +835,39 @@ export default Home;
 
 Now what we have is a component that is not just useful for multiple instances within
 this project, but one that is possibly useful in OTHER future projects as well.
+
+
+!!!!! The React Router !!!!! (the-react-router branch)
+
+First we need 'npm install react-router-dom' because routing doesn't come with
+react by default.
+
+For now, let's set up the Routes for our Home.js:
+
+//App.js
+//import logo from './logo.svg';
+import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // add this
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+Note that the new import, and the return has to be wrapped in the 'Router' tag, and the 'Routes' tag
+is where all of the routes will be loaded. Note the 'Route' tag specifies both the URL path
+as well as the tag for the Home component.
