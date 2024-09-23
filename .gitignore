@@ -11,8 +11,9 @@
 # production
 /build
 
-# other
-../README.md
+# environment
+.env
+
 
 # misc
 .DS_Store
