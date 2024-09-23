@@ -966,3 +966,8 @@ make changes on BlogList to include 'Link to'
 
 
 !!!!! Reusing Custom Hooks !!!!! (reusing-custom-hooks branch)
+
+More details added to BlogDetails
+
+
+!!!!! Controlled Inputs (forms) !!!!! (controlled-inputs-forms branch)
