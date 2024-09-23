@@ -993,3 +993,6 @@ changes to Create.js
 !!!!! Deleting Blogs !!!!! (deleting-blogs branch)
 
 changes to BlogDetails.js, now we can go to blog entries and see a delete button!
+
+
+!!!!! 404 Pages & Next Steps !!!!! (404-pages-and-next-steps branch)
