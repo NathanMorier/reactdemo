@@ -1,6 +1,7 @@
 // Create.js
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { supabase } from './supabaseClient';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -9,21 +10,22 @@ const Create = () => {
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const blog = { title, body, author }
-
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission
     setIsPending(true);
 
-    fetch('http://localhost:8000/blogs', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      console.log('new blog added');
+    const { error } = await supabase
+      .from('blogs')
+      .insert([{ title, body, author }]);
+
+    if (error) {
+      console.error('Error adding blog:', error.message);
+      setIsPending(false);
+    } else {
+      console.log('New blog added');
       setIsPending(false);
       navigate('/');
-    })
+    }
   }
 
   return (

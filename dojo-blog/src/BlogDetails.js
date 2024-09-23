@@ -1,29 +1,57 @@
+// BlogDetails.js
 import { useParams } from "react-router-dom";
-import useFetch from './useFetch';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from './supabaseClient';
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+  const [blog, setBlog] = useState(null);
+  const [error, setError] = useState(null);
+  const [isPending, setIsPending] = useState(true);
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    fetch('http://localhost:8000/blogs/' + blog.id, {
-      method: 'DELETE'
-    }).then(() => {
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const { data, error } = await supabase
+        .from('blogs')
+        .select('*')
+        .eq('id', id)
+        .single(); // Fetch a single blog
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setBlog(data);
+      }
+      setIsPending(false);
+    };
+
+    fetchBlog();
+  }, [id]);
+
+  const handleClick = async () => {
+    const { error } = await supabase
+      .from('blogs')
+      .delete()
+      .eq('id', blog.id);
+
+    if (error) {
+      setError(error.message);
+    } else {
       navigate('/');
-    })
-  }
+    }
+  };
 
   return (
     <div className="blog-details">
-      { isPending && <div>Loading...</div>}
-      { error && <div>{ error}</div> }
-      { blog && (
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {blog && (
         <article>
-          <h2>{ blog.title }</h2>
-          <p>Written by { blog.author }</p>
-          <div>{ blog.body }</div>
+          <h2>{blog.title}</h2>
+          <p>Written by {blog.author}</p>
+          <div>{blog.body}</div>
           <button onClick={handleClick}>delete</button>
         </article>
       )}

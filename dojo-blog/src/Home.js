@@ -1,10 +1,29 @@
 //Home.js
-//import { useState, useEffect } from 'react'; // no longer needed since everything has been moved to useFetch.js
+import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
-import useFetch from './useFetch';
+import { supabase } from './supabaseClient';
 
 const Home = () => {
-  const { data: blogs, isPending, error} = useFetch('http://localhost:8000/blogs'); // this will pass the values between here and useFetch.js
+  const [blogs, setBlogs] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const { data, error } = await supabase
+        .from('blogs')
+        .select('*');
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setBlogs(data);
+      }
+      setIsPending(false);
+    };
+
+    fetchBlogs();
+  }, []);
 
   return (
     <div className="home">
