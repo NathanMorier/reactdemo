@@ -986,3 +986,10 @@ changes to Create.js
 
 
 !!!!! Programmatic Redirects !!!!! (programmatic-redirects branch)
+
+changes to Create.js
+
+
+!!!!! Deleting Blogs !!!!! (deleting-blogs branch)
+
+changes to BlogDetails.js, now we can go to blog entries and see a delete button!
