@@ -4,19 +4,31 @@
       "title": "It's a-meee!!",
       "body": "Hello, Mario fans!  It's me, Mario, here to share an exciting adventure I had in the Mushroom Kingdom. I was on a mission to rescue Princess Peach, as usual, when I stumbled upon a hidden path. It led me to a mysterious temple, guarded by a friendly Goomba. The Goomba, named Gary, was actually a history buff and loved to share tales of the old Mushroom Kingdom. He told me about a Power Star, lost in time, that could grant immense power. Intrigued, I decided to help Gary find this Power Star.We ventured deep into the temple, solving puzzles and collecting coins. Gary's knowledge was invaluable, and I was glad to have him by my side. After a day of thrilling adventure, we found the Power Star! But here's the twist - Gary, the Goomba, was the rightful owner of the Power Star. He wanted to use it to create a peaceful coexistence between Goombas and the Mushroom Kingdom. Touched by his noble intention, I decided to help him. Back in the kingdom, we were greeted with cheers. The Power Star, in Gary's hands, brought a new era of harmony. It was a reminder that even the most unexpected allies can lead to great friendships and a more united kingdom. Stay tuned for more of my adventures in the Mushroom Kingdom! Remember, it's not about the destination, but the journey and the friends we make along the way. Until next time, keep jumping and remember - 'Our Princess is in another castle!'",
       "author": "mario",
-      "id": 1
+      "id": "1"
     },
     {
       "title": "Yahoooo!",
       "body": "Hey there, Yoshi fans! It's me, Yoshi, your friendly dinosaur from the Mushroom Kingdom. I'm here to share a fun-filled adventure I had with my little buddy, Mario. One sunny day, Mario and I were lounging around when we heard a faint cry for help. It was coming from the nearby forest. Without a second thought, we rushed to the rescue. We found a group of Baby Yoshis trapped in a cage, guarded by a grumpy Koopa. Mario distracted the Koopa with a well-aimed egg, and I quickly freed the Baby Yoshis. They were so grateful and hopped onto our backs, ready for an adventure. We decided to have a picnic, but we needed food. So, off we went to gather fruits and eggs. The Baby Yoshis were so excited, bouncing around and helping us collect food. We had a blast, and soon, our picnic basket was full. At the picnic, we shared stories, laughed, and enjoyed the delicious food. The Baby Yoshis were great company, and Mario was thrilled to have them around. After the picnic, we returned the Baby Yoshis to their home, promising to visit often. This adventure taught me the joy of sharing and caring. It was a reminder that helping others can lead to unexpected, fun-filled adventures. Until next time, keep eating, keep exploring, and remember - 'Yoshi's got eggs!'",
       "author": "yoshi",
-      "id": 2
+      "id": "2"
     },
     {
       "title": "Yehee, go green!",
       "body": "Hello, Luigi fans! It's me, Luigi, the green-clad, brave-at-heart brother of Mario. I'm here to share a spooky yet exciting adventure I had in the Mushroom Kingdom. One stormy night, I was tasked to visit a haunted mansion to fix a broken pipe. Armed with my trusty flashlight, I ventured into the mansion. The mansion was eerily quiet, with creaking doors and flickering lights. Suddenly, I heard a strange noise. I turned around and saw a group of Boos! I gulped, but then I remembered Mario's words - 'Remember, Luigi, you're not just a plumber, you're a hero!' I decided to confront the Boos. I used my flashlight to light up the mansion, and to my surprise, the Boos started to follow the light. I led them to the exit and bid them goodbye. It felt good to face my fears and help the Boos find their way out. After fixing the pipe, I explored the mansion and found a secret room. Inside, I found a trophy - a reward for my bravery! I returned home, feeling proud and ready for the next adventure. This adventure taught me that fear is just a part of life. It's how we face and overcome our fears that define us. Until next time, keep exploring, keep facing your fears, and remember - 'Luigi can do it!'",
       "author": "luigi",
-      "id": 3
+      "id": "3"
+    },
+    {
+      "id": "dc28",
+      "title": "Test Blog",
+      "body": "I'm the Body!!!!",
+      "author": "mario"
+    },
+    {
+      "id": "f3c3",
+      "title": "New Feature!",
+      "body": "Now the button will be disabled and the text will be changed while \"setIsPending\" is set to true.",
+      "author": "Yoshi"
     }
   ]
 }
