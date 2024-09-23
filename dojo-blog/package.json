@@ -2,7 +2,7 @@
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nathanmorier.github.io/reactdemo",
+  "homepage": "https://nathanmorier.github.io/reactdemo/dojo-blog",
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
     "@testing-library/jest-dom": "^5.17.0",
