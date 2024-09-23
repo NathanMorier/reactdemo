@@ -29,6 +29,12 @@
       "title": "New Feature!",
       "body": "Now the button will be disabled and the text will be changed while \"setIsPending\" is set to true.",
       "author": "Yoshi"
+    },
+    {
+      "id": "a47d",
+      "title": "Another New Feature!",
+      "body": "Now the app will navigate to the home page after blog is added!",
+      "author": "mario"
     }
   ]
 }
