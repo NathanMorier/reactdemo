@@ -998,3 +998,5 @@ changes to BlogDetails.js, now we can go to blog entries and see a delete button
 !!!!! 404 Pages & Next Steps !!!!! (404-pages-and-next-steps branch)
 
 NotFound.js added, new route for "all" that don't match other routes, effectively making a 404 page.
+
+main branch is setting it up for deployment, gh-pages will be used to actually push up.
