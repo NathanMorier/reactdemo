@@ -11,12 +11,13 @@ const useFetch = (url) => { // all function names for custom hooks MUST start wi
 
   // Take ALL of that useEffect in Home.js and put it here:
   useEffect(() => {
+    const abortCont = new AbortController();
     /*
     The setTimeout is simply to test a live loading time, because it'll
     otherwise show extremely quickly since this current setup is local.
     */
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then(res => {
           /*
           This will return conditions of the response, and you can make conditions
@@ -53,10 +54,16 @@ const useFetch = (url) => { // all function names for custom hooks MUST start wi
           and turn it off.
           */
           //console.log(err.message);
-          setIsPending(false); // remove loading message when error shows
-          setError(err.message); // show error message
+          if (err.name === 'AbortError') {
+            console.log('fetch aborted');
+          } else {
+            setIsPending(false); // remove loading message when error shows
+            setError(err.message); // show error message
+          }
         })
     }, 1000);
+
+    return () => abortCont.abort();
   }, [url]);
 
   return {data, isPending, error} // this return allows us to pass through to the const in Home.js

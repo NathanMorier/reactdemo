@@ -925,3 +925,34 @@ Because otherwise, when you'd try to go to /create, it would just pick up on the
 and then go to that instead, just like a page called "/c" would get loaded instead
 of "/create" if it existed. The newer versions have corrected this issue, so
 instead we'll now go on to setting up router links!
+
+
+!!!!! Router Links !!!!! (router-links branch)
+
+//Navbar.js
+import { Link } from 'react-router-dom'; // import this
+
+const Navbar = () => { // thick arrows are acceptable, or you can do it like App.js
+  return (
+    <nav className="navbar">
+      <h1>The Dojo Blog</h1>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/create">New Blog</Link>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
+
+So what changed? instead of "a href", it's now "Link to", and that will allow
+router links to work like a charm! Now, you may notice in OLDER versions this
+throws a console error even though the links work, but in the newer version it's
+all good!
+
+
+
+!!!!! useEffect Cleanup !!!!! (use-effect-cleanup branch)
+
+Added items for AbortController
