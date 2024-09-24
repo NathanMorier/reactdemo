@@ -11,7 +11,7 @@ const Create = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
     setIsPending(true);
 
     const { error } = await supabase

@@ -1,7 +1,7 @@
 //Navbar.js
-import { Link } from 'react-router-dom'; // import this
+import { Link } from 'react-router-dom';
 
-const Navbar = () => { // thick arrows are acceptable, or you can do it like App.js
+const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>The React Blog</h1>
